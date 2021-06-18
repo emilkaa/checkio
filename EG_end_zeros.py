@@ -1,14 +1,12 @@
 def end_zeros(num: int) -> int:
-    y = str(num)
+    y = reversed(str(num))
     end = 0
-    i = -1
-    if int(y[i]) == 0:
-        end = end + 1
-        i = i - 1
-        return end
-    else:
-        return end
-#    return end
+    for i in y:
+        if i == "0":
+            end += 1
+        else:
+            break
+    return end
 
 
 if __name__ == '__main__':

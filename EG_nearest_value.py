@@ -3,16 +3,14 @@ import numpy as np
 
 def nearest_value(values: set, one: int) -> int:
     li = list(values)
-    dl =len(li)
+    li.sort()
     end = li[-1]
-    print(end)
-    print(dl)
     if one in li:
         return one
     if one > end:
-        return values[-1]
-    else:
         li.sort()
+        return end
+    else:
         # difference_array = np.absolute(li-one)
         # absolute_difference_function = lambda list_value: abs(li - one)
         # closest_value = min(li, key=absolute_difference_function)
